@@ -19,6 +19,10 @@
         path = ./groff;
         description = "Groff development environment";
       };
+      latex = {
+        path = ./latex;
+        description = "LaTeX development environment";
+      };
     };
   };
 }
