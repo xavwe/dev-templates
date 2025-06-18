@@ -4,4 +4,4 @@ default:
 
 compile:
   mkdir -p ./build
-  groff -Tps -ms ./src/test.ms | ps2pdf - ./build/test.pdf
+  pdflatex -output-directory=build ./src/test.tex
