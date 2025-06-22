@@ -1,15 +1,27 @@
+set quiet
+set positional-arguments
+
+file := 'src/main.sh'
+test := 'test/test.bats'
+
 [private]
 default:
   just --list
 
-# watch for changes and test script
-test-watch:
-  ls ./src/backup | entr doas bats ./test/test.bats
+[private]
+chore:
+  chmod +x ./src/main.sh
+  chmod +x ./scripts/test.sh
+  chmod +x ./scripts/run.sh
+  git submodule init
+  git submodule update
 
 # test script
-test:
-  bats ./test/test.bats
+test *args:
+  @just chore
+  {{justfile_directory()}}/scripts/test.sh --just-test "{{justfile_directory()}}/{{test}}" --just-file "{{justfile_directory()}}/{{file}}" {{args}}
 
 # run script
-run:
-  ./src/run.sh
+run *args:
+  @just chore
+  {{justfile_directory()}}/scripts/run.sh --just-file "{{justfile_directory()}}/{{file}}" {{args}}
