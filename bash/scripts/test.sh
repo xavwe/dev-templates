@@ -44,7 +44,7 @@ if [ -z "$FILE" ]; then
 fi
 
 if [ "$WATCH_MODE" -eq 1 ]; then
-  ls "$FILE" | entr bats "$TEST"
+  find "$FILE" | entr bats "$TEST"
 else
   bats "$TEST"
 fi

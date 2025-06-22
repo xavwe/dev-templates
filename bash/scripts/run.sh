@@ -30,7 +30,7 @@ if [ -z "$FILE" ]; then
 fi
 
 if [ "$WATCH_MODE" -eq 1 ]; then
-  ls "$FILE" | entr bash "$FILE"
+  find "$FILE" | entr bash "$FILE"
 else
   bash "$FILE"
 fi
