@@ -1,4 +1,4 @@
-name: bats tests
+name: test
 
 on: [push, pull_request]
 
@@ -9,7 +9,7 @@ jobs:
       - name: Setup BATS testing framework
         uses: mig4/setup-bats@v1.2.0
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           submodules: true
       - name: Run BATS tests
