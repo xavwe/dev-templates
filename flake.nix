@@ -23,6 +23,14 @@
         path = ./latex;
         description = "LaTeX development environment";
       };
+      zig = {
+        path = ./zig;
+        description = "Zig development environment";
+      };
+      astro = {
+        path = ./astro;
+        description = "Astro development environment";
+      };
     };
   };
 }

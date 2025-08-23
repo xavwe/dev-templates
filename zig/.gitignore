@@ -1,0 +1,14 @@
+# zig
+
+/.zig-cache/
+/zig-out/
+/answers/
+/patches/healed/
+/output/
+.progress.txt
+
+# for older zig versions
+/zig-cache/
+
+# direnv
+.direnv
