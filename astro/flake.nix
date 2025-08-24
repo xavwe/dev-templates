@@ -38,7 +38,7 @@
     };
   };
   shellHook = ''
-  git init
-  npm create astro@latest
+  echo "git init"
+  echo "npm create astro@latest"
   '';
 }%

@@ -37,7 +37,7 @@
     };
   };
   shellHook = ''
-  git init
-  zig init
+  echo "git init"
+  echo "zig init"
   '';
 }
